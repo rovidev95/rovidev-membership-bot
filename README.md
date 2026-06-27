@@ -1,5 +1,9 @@
 # membership-bot
 
+[![CI](https://github.com/rovidev95/rovidev-membership-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/rovidev95/rovidev-membership-bot/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Python](https://img.shields.io/badge/Python-3.11+-3776ab)
+
 Automates access to a paid Telegram/Discord community based on Stripe
 subscriptions. A payment grants access, a cancellation or refund removes it, and
 a periodic sweep revokes access once the paid period ends.
@@ -80,6 +84,11 @@ bot/
 pytest -q
 ruff check .
 ```
+
+## Custom work
+
+Need a paid-community or subscription bot integrated with your payment provider?
+Get in touch at [rovidev.com](https://rovidev.com).
 
 ## License
 
