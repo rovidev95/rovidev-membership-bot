@@ -1,0 +1,21 @@
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    environment:
+      BOT_PAYMENT_BACKEND: ${BOT_PAYMENT_BACKEND:-fake}
+      BOT_CHAT_BACKEND: ${BOT_CHAT_BACKEND:-fake}
+      BOT_STRIPE_SECRET_KEY: ${BOT_STRIPE_SECRET_KEY:-}
+      BOT_STRIPE_WEBHOOK_SECRET: ${BOT_STRIPE_WEBHOOK_SECRET:-}
+      BOT_TELEGRAM_BOT_TOKEN: ${BOT_TELEGRAM_BOT_TOKEN:-}
+      BOT_TELEGRAM_CHAT_ID: ${BOT_TELEGRAM_CHAT_ID:-}
+    ports:
+      - "8000:8000"
+
+  worker:
+    build: .
+    restart: unless-stopped
+    command: ["membership-worker", "--interval", "3600"]
+    environment:
+      BOT_PAYMENT_BACKEND: ${BOT_PAYMENT_BACKEND:-fake}
+      BOT_CHAT_BACKEND: ${BOT_CHAT_BACKEND:-fake}

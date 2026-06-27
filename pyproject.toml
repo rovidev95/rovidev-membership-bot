@@ -1,0 +1,47 @@
+[project]
+name = "rovidev-membership-bot"
+version = "1.0.0"
+description = "Paid community access driven by Stripe subscriptions: auto-join, expiry sweeps and idempotent webhooks."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "RoviDev", email = "contacto@rovidev.com" }]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.6.0",
+]
+
+[project.optional-dependencies]
+stripe = ["stripe>=11.0.0"]
+telegram = ["httpx>=0.27.0"]
+dev = [
+    "pytest>=8.3.0",
+    "httpx>=0.27.0",
+    "ruff>=0.8.0",
+]
+
+[project.urls]
+Homepage = "https://rovidev.com"
+Repository = "https://github.com/RoviDev/rovidev-membership-bot"
+
+[project.scripts]
+membership-worker = "bot.worker:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["bot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
