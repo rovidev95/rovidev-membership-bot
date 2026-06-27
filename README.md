@@ -14,6 +14,8 @@ The lifecycle logic lives in `MembershipService` and has no Stripe/Telegram
 imports, so it's easy to test and reuse. Stripe and Telegram are adapters behind
 small interfaces; in-memory/fake versions ship for local use and tests.
 
+![Subscription lifecycle](docs/example.png)
+
 ## Lifecycle
 
 ```
