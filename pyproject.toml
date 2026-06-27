@@ -24,7 +24,7 @@ dev = [
 
 [project.urls]
 Homepage = "https://rovidev.com"
-Repository = "https://github.com/RoviDev/rovidev-membership-bot"
+Repository = "https://github.com/rovidev95/rovidev-membership-bot"
 
 [project.scripts]
 membership-worker = "bot.worker:main"

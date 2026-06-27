@@ -4,6 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/Python-3.11+-3776ab)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/rovidev95/rovidev-membership-bot)
+
 Automates access to a paid Telegram/Discord community based on Stripe
 subscriptions. A payment grants access, a cancellation or refund removes it, and
 a periodic sweep revokes access once the paid period ends.

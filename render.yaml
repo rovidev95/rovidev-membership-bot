@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: rovidev-membership-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -e .
+    startCommand: uvicorn bot.app:app --host 0.0.0.0 --port $PORT
